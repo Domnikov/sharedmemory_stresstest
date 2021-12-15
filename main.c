@@ -7,7 +7,7 @@
 #include <time.h>
 
 // Here to change shared memory buffer size
-const static int MEM_SZ = 64;
+const static int MEM_SZ = 1024;
 
 int main(int argc, char** argv)
 {
@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 
     if(argc != 3)
     {
-        printf("Using: \"test_sharedmemory M N\" where M number of processes and N stress test iteration number\n");
+        printf("Using: test_sharedmemory M N\n\twhere:\n\tM number of processes\n\tN number of stress test iterations (0 - infinite)\n");
         return -1;
     }
 
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
     srand (time(NULL));
 
     // Stress test loop
-    for (int i = 0; i < stress_num; ++i)
+    for (int i = 0; i < stress_num || !stress_num; ++i)
     {
         pthread_mutex_lock(&shmem->mutex);
         char pattern = shmem->data[0];
