@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 
     if(argc != 3)
     {
-        printf("Using: test_sharedmemory M N\n\twhere:\n\tM number of processes\n\tN number of stress test iterations (0 - infinite)\n");
+        printf("Using: test_sharedmemory M N\nWhere:\n\tM number of processes\n\tN number of stress test iterations (0 - infinite)\n");
         return -1;
     }
 
