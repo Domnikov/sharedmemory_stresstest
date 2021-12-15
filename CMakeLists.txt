@@ -5,5 +5,8 @@ project(test_sharedmemory LANGUAGES C)
 add_executable(test_sharedmemory
     main.c)
 
-target_link_libraries(test_sharedmemory rt pthread)
+if(CMAKE_SYSTEM_NAME STREQUAL "QNX")
+else()
+	target_link_libraries(test_sharedmemory rt pthread)
+endif()
 
