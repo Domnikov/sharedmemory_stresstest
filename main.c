@@ -7,7 +7,7 @@
 #include <time.h>
 
 // Here to change shared memory buffer size
-const static int MEM_SZ = 1024;
+#define MEM_SZ 1024
 
 int main(int argc, char** argv)
 {
